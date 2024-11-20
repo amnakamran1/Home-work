@@ -1,0 +1,37 @@
+<h1 class="text-center bg-dark text-light">Databinding </h1>
+
+<div class="text-center">
+    <button (click)="Changemessage()">Change message</button>
+<h2>Interpolation Binding: {{ message }}</h2><br>
+{{student}}<br>
+Name : {{ student.name }}<br>
+
+Age : {{student.age }}<br>
+Address : {{student.address }}<br>
+
+{{num1 +num1 +num2}}<br>
+{{num2-num1}}<br>
+{{num1 *num2}}<br>
+{{num1 /num2}}<br>
+<h2>Property Binding</h2>
+
+<input type="text" [value]="message" />
+<br>
+<h2>Event Binding</h2>
+<input type="text" #txtdata (keyup)="onchange(txtdata.value)" />
+<button (click)="updateMessage()"> Update Message</button>
+ Your message :<b>{{message}}</b>
+ <h2>Two-way Data Binding</h2>
+ <input type="text" [(ngModel)]="message" />
+
+ Your message :<b>{{message}}</b>
+
+
+
+
+
+
+
+
+
+</div>
