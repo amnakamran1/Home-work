@@ -1,0 +1,112 @@
+<h1>Structural And Attibute Directive</h1>
+
+<div class="container"> 
+    <div class="row">
+        <div class="col-3">
+            @if ( div1show == true ){
+                <div class="p-3 text-center bg-primary">
+                    <h2>Div1</h2>
+                </div>
+            }
+
+        </div>
+            <div class="col-3">
+                @if(div2toggle==true){
+                <div class="p-3 flex text-center bg-success">
+                    <h2>Div2 success</h2>
+                </div>}
+                @else{
+                    <div class="p-3 flex text-center bg-warning">
+                        <h2>Div2 warring</h2>
+                    </div>}
+
+            </div>
+                <div class="col-3">
+                    @if (num1 == num2){
+                        <div class="p-3 text-center bg-danger">
+                            <h2>Div3</h2>
+                        </div>
+                    }
+                    
+                    </div>
+        </div>
+        <div class="row pt-4">
+            <div class="col-4 text-center">
+                <button class="btn btn-primary" (click)="showdiv1()">SHOW</button>
+                <button class="btn btn-danger mx-2" (click)="hidediv1()">HIDE</button>
+            </div>
+            <div class="col-3">
+                <button class="btn btn-success" (click)="togglediv2()">TOGGLE</button>
+            </div>
+            <div class="col-3">
+                <div style="display:flex ; align-items: center;">
+                <input type="text" [(ngModel)]='num1'placeholder="num1" class="width-10">
+                <input type="text" [(ngModel)]='num2' placeholder="num2" class="width-30">
+                </div>
+            </div>
+        </div>     
+        </div>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-6">
+                    <h2>City List</h2>
+                    <ul>
+                    @for(item of cityName; track $index){
+                        <li>
+                    
+                                <h3>{{item}}</h3>
+                
+                            </li> }                       
+                    </ul>    
+                </div>
+                <div class="col-6">
+                    <h2>Student List</h2>
+                    <table class="table table-borderred">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>City</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for(student of studentList; track student.id){
+                                <tr>
+                                    <td>{{student.id}}</td>
+                                    <td>{{student.name}}</td>
+                                    <td>{{student.age}}</td>
+                                    <td>{{student.city}}</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <h2>Switch Case</h2>
+                <div class="col-6">
+                    @switch (DayName) {
+                        @case ('Usman') {
+                          <b>Today is {{DayName}}</b>
+                        }
+                        @case ('Hasan') {
+                          <b>Today is {{DayName}}</b>
+                        }
+                        @case ('Maaz') {
+                          <b>Today is {{DayName}}</b>
+                        }
+                        @case ('Monday') {
+                          <b>Today is {{DayName}}</b>
+                        }
+                        @default {
+                          <b>Hello World</b>
+                        }
+                      }
+              
+                </div>
+            </div>
+        </div>
+
+

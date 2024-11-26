@@ -5,11 +5,13 @@ import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './main/header.component';
 import { DatabindingComponent } from './databinding/databinding.component';
+import { DirectiveComponent } from './directive/directive.component';
 
 export const routes: Routes = [
     {path:'home',component:HomeComponent},
     {path:'about',component:AboutComponent},
     {path:'main',component:HeaderComponent},
     {path:'contact',component:ContactComponent},
-    {path:'databinding',component:DatabindingComponent}
+    {path:'databinding',component:DatabindingComponent},
+    {path:'directive',component:DirectiveComponent}
 ];

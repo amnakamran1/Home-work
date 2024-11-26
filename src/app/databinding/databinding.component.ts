@@ -13,7 +13,7 @@ export class DatabindingComponent {
 student={
   name: "Jinha",
   age: 25,
-  address: "Karachi",}
+  address: "Karachi"}
   
   message: string= "Hello world!";
   Changemessage(){
