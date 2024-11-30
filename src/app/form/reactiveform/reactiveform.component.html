@@ -1,0 +1,71 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <h2 class="text-center mb-4">{{title}}  </h2>
+        <form [formGroup]="studentForm" class="p-4 border rounded shadow">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name:</label>
+            <input
+              id="name"
+              type="text"
+              class="form-control"
+              formControlName="fname"
+              
+            />
+            <div class="text-danger">
+                @if (studentForm.controls['fname'].touched && studentForm.controls['fname'].errors?.['required']) {
+                <span>This is Required</span>
+                } @else if (studentForm.controls['fname'].touched && studentForm.controls['fname'].errors?.['minlength']) {
+                <span>Min char 4 Required</span>
+                }
+              </div>
+          
+          </div>
+  
+          <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input
+              id="email"
+              type="email"
+              class="form-control"
+              formControlName="email"
+            />
+            <div class="text-danger">
+                @if (studentForm.controls['email'].touched && studentForm.controls['email'].errors?.['required']) {
+                <span>This is Required</span>
+                } @else if (studentForm.controls['email'].touched && studentForm.controls['email'].errors?.['email']) {
+                <span>Email format </span>
+                }
+              </div>
+          
+  
+          <div class="mb-3">
+            <label for="password" class="form-label">Password:</label>
+            <input
+              id="password"
+              type="password"
+              class="form-control"
+              formControlName="password"
+              
+            />
+            <div class="text-danger">
+                @if (studentForm.controls['password'].touched && studentForm.controls['password'].errors?.['required']) {
+                <span>This is Required</span>
+                } @else if (studentForm.controls['password'].touched && studentForm.controls['password'].errors?.['minlength']) {
+                <span>Min char 4 Required</span>
+                }
+              </div>
+          
+          </div>
+  
+          <button type="submit" class="btn btn-primary w-100" [disabled]="studentForm.invalid" (click)="onSubmit()">
+            Submit
+          </button>
+        
+      </div>
+    </form>
+    <div class="container text-scuccess">
+        {{ formValue | json }}
+      </div>
+    </div>
+  </div>
